@@ -14,7 +14,7 @@ fi
 
 REPO_GIT_INIT_PATHS="istio"
 REPO_ROOT=$(git rev-parse --show-toplevel)
-REPO_URL=${1:-git@github.com:viveknidhil/gitops-istio}
+REPO_URL=${1:-git@github.com:viveknidhil/gitops-istio-flux}
 REPO_BRANCH=master
 TEMP=${REPO_ROOT}/temp
 
