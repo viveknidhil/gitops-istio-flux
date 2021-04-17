@@ -15,7 +15,7 @@ fi
 REPO_GIT_INIT_PATHS="istio"
 REPO_ROOT=$(git rev-parse --show-toplevel)
 REPO_URL=${1:-git@github.com:viveknidhil/gitops-istio-flux}
-REPO_BRANCH=master
+REPO_BRANCH=main
 TEMP=${REPO_ROOT}/temp
 
 rm -rf ${TEMP} && mkdir ${TEMP}
@@ -51,6 +51,14 @@ do
   sleep 5
 done
 echo ">>> Github deploy key is ready"
+
+
+echo "Starting our HELM Deployment by Vivek"
+#kubectl create namespace istio-system
+#helm install istio-base manifests/charts/base -n istio-system
+#helm install istiod manifests/charts/istio-control/istio-discovery  -n istio-system
+
+
 
 # wait until sidecar injector webhook is ready before enabled prod namespace on flux
 echo ">>> Waiting for istiod to start"
